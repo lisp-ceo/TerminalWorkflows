@@ -1,46 +1,7 @@
 TerminalWorkflows
 =================
+Here are the exercises supporting James' NYLUG Workshop on working with the Linux terminal - the most powerful development platform known to man.
 
-Lesson 1) 
+To check them out, register your computer with GitHub and git clone the master branch. Alternatively, just view and download the selected plaintext files you need.
 
-* Terminal navigation:
-  * cd, ls, pwd, cat, echo, tack-commands
-  * top, home, root, different directories 
-  * Ctrl-Z, Ctrl-D, fg, killall, kill %
-* GitHub 
-* Core Utils
-  * Man, echo, cat, less, tail, head, more, xargs, ls, awk, sed
-* Terminal emulation:
-  * tmux
-  * tmux.conf
-  * Split windows for productivity
-* Vim
-  * Edit mode
-  * Insert mode
-  * Vim golf
-* Exercises
-  * Vim golf
-  * 
-
-Lesson 2)
-
-* More Vim
-* Input / Output redirection
-* Alternative shells - Zshell
-* environment variables, .bashrc, .vimrc, .zshrc
-* Permissions, sudoers
-* User management
-
-Lesson 3)
-* SSH
-* 
-
-* Bash Scripts
-
-Lesson 4)
-
-* Git
-
-Lesson 5)
-
-* 
+All source code and assets are released under the Copyleft license 2013.

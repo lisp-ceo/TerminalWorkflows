@@ -1,51 +1,8 @@
 TerminalWorkflows
 =================
 
-Lesson 1) 
+Here is the sauce for the website supporting James' NYLUG Workshop on working with the Linux terminal - the most powerful development platform known to man.
 
-* Terminal navigation:
-  * cd, ls, pwd, cat, echo, tack-commands
-  * top, home, root, different directories 
-  * Ctrl-Z, Ctrl-D, fg, killall, kill %
-* GitHub 
-* Core Utils
-  * Man, echo, cat, less, tail, head, more, xargs, ls, awk, sed
-* Terminal emulation:
-  * tmux
-  * tmux.conf
-  * Split windows for productivity
-* Vim
-  * Edit mode
-  * Insert mode
-  * Vim golf
-* Exercises
-  * Vim golf
-  * 
+Over 5 weeks you'll run through everything from navigating the filesystem through multiplexing terminals to SSH and Git usage.
 
-Lesson 2)
-
-* Terminal Multiplexing
-  * TMUX
-  * Screen
-* Input / Output redirection
-* Alternative shells - Zshell
-* environment variables, .bashrc, .vimrc, .zshrc
-* Permissions, sudoers
-* User management
-
-Lesson 3)
-* Linux Filesystem
-* SSH
-* RCP, rsync
-* Git
-
-Lesson 4)
-
-* Bash Scripting
-
-Lesson 5)
-
-* Advanced Tools
-   * CRON 
-   * irssi
-   * 
+All source code and assets are released under the Copyleft license 2013.

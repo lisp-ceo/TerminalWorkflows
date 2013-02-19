@@ -24,7 +24,9 @@ Lesson 1)
 
 Lesson 2)
 
-* More Vim
+* Terminal Multiplexing
+  * TMUX
+  * Screen
 * Input / Output redirection
 * Alternative shells - Zshell
 * environment variables, .bashrc, .vimrc, .zshrc
@@ -32,15 +34,18 @@ Lesson 2)
 * User management
 
 Lesson 3)
+* Linux Filesystem
 * SSH
-* 
-
-* Bash Scripts
+* RCP, rsync
+* Git
 
 Lesson 4)
 
-* Git
+* Bash Scripting
 
 Lesson 5)
 
-* 
+* Advanced Tools
+   * CRON 
+   * irssi
+   * 

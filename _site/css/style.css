@@ -26,3 +26,10 @@ h4 {
 span.panel {
 }
 
+ul.bulleted {
+  list-style: initial;
+}
+
+ul.bulleted li {
+  margin-left:40px;
+}

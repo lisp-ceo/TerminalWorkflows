@@ -12,8 +12,9 @@
   <body>
     <div class="wrapper">
       <div class="container_12">
-        {% if page.title %}<h1>{{page.title}}</h1>{% endif %}<br/>
-	{% if page.subtitle %}<h2>{{page.subtitle}}</h2>{% endif %}<br />
+        {% if page.title %}<h1>{{page.title}}</h1>{% endif %}<br/><br />
+        {% if page.subtitle %}<h2>{{page.subtitle}}</h2>{% endif %}<br />
+        {% if page.date %}<h4>{{page.date}}</h4>{% endif %}<br/><br />
       </div>
       <div class="container_12">
       {% if content %}

@@ -12,172 +12,87 @@ subtitle: "By popular demand, the second tutorial will cover advanced usage of V
 <br /><br />
 <h1>Tmux: The Oil</h4><br /><br />
 <h4>Windows and Buffers</h4><br /><br />
+<p><b> ` </b> - this is the command key. your default will be different but mine is set to the backtick</p><br />
+<p><b> ` + c</b> - create new window</p><br />
+<p><b> ` + x</b> - close current window</p><br />
+<p><b> ` + 1-0</b> - change to windows 1 through 0</p><br />
+<p><b> ` + (space) </b> - autoformat the windows</p><br />
+<p><b> ` + t </b> - bring up the clock</p><br />
 <h4>Detaching</h4><br /><br />
+<p><b> ` + d </b> - detach session</p><br />
+<p><b>tmux attach</b> - attaches the session</p><br />
+<p>Easy way to facilitate pair programming on the same machine. SSH into their machine and then attach another session.</p>
 <h4>Remote sesions</h4><br /><br />
 <h4>.tmux.conf</h4><br /><br />
+<p>Most important part of this tool is customizing it to your needs. <a href="https://github.com/JamesMeldrum/dotfiles/blob/master/.tmux.conf">Here's mine</a>, find as many as you can.</p>
+
 <br />
 <h1>Vim: The Vinegar</h1><br /><br/>
 <h4>Modes and options</h4><br /><br />
-<!--<ul class="bulleted">
+<ul class="bulleted">
     <li>vim - default method for opening the editor </li>
     <li>view - start in read-only mode</li>
     <li>vimdiff - uses vim to diff two given files</li>
     <li>vim -x - encrypts your files using a provided crypt key</li>
   </ul>
--->
-
 <h4>Vim commands</h4><br /><br />
-<!--<p>To get autocompletion on commands (:e) press Ctrl-D</p>-->
-
+<p>To get autocompletion on commands (:e) press Ctrl-D</p>
 <h4>Vim servers</h4><br /><br />
+<p>Vim can run as a server using the --servername (name of server) directive.</p>
 <h4>Vimrc color schemes</h4><br /><br />
+<p>See 
+https://github.com/flazz/vim-colorschemes and my vimrc for more</p>
 <h4>Vimrc configuration </h4><br /><br />
+<p>Most important part of this tool is customizing it to your needs. <a href="https://github.com/JamesMeldrum/dotfiles/blob/master/.vimrc">Here's mine</a>, find as many as you can.</p>
 <h4>Vim folding </h4><br /><br />
-<!--<ul class="bulleted">
+TODO: Vim examples 
+<ul class="bulleted">
     <li>vim can detect structured text and fold it accordingly.</li>
     <li>zfap - create a folder under the cursor using text object selection</li>
     <li>zo - open a fold</li>
     <li>zc - close a previously created fold</li>
-  </ul>-->
+  </ul>
 <h4>Vim tags</h4><br /><br />
-  <!--<ul class="bulleted">
+  <ul class="bulleted">
     <li>vim integrates with the ctags tool to create and parse any ctags files that you create to manage method signatures in external files </li>
-  </ul>-->
+  </ul>
 <h4>Vim quickfix</h4><br /><br />
-  <!--<ul class="bulleted">
-    <li>QuickFix utility provides edit-time error checking </li>
-  </ul>-->
+  <ul class="bulleted">
+    <li>QuickFix utility provides edit-time error checking. Show jslint with quickfix. </li>
+  </ul>
 <h4>The Netrw File System Emulator</h4><br /><br />
+<p><b> :E </b> - open the file view from Vim</p><br />
+<p><b> v</b> - split window vertically and open file/folder</p><br />
+<p>facilitates searching, sorting, window changing in new files. Don't use NerdTree for this.</p><br />
 <h4>The Ex System Interpretor</h4><br /><br />
-  <!--<ul class="bulleted">
-    <li>Ex commands are prefaced with a colon </li>
-  </ul>-->
-<h4>Shifting text</h4><br /><br />
-    <!--<p>This part of Vim arguably is the hardest to master, even if you're convinced that you can.</p>
+  <ul class="bulleted">
+    <li>Vim key commands are implemented using the Ex System Interpreter. Accessing this directly can save you a lot of time in your workflow. Once you master its syntax you can do everything from writing one-liners to produce formatted reports that would take 40 lines in Python or Windows Forms to turning <a href="www.vimgolf.com/challenges/50ea3ca82bf6290002000040">JSON to XML</a></li>
+  </ul>
   <ul class="bulleted">
     <li>gJ / :42,43J - join lines</li>
-  </ul>-->
+  </ul>
 <h4>Vim macros</h4><br /><br />
-<!--Record and playback commands
-
-The "." command repeats the preceding change.  But what if you want to do
-something more complex than a single change?  That's where command recording
-comes in.  There are three steps:
-
-1. The "q{register}" command starts recording keystrokes into the register
-   named {register}.  The register name must be between a and z.
-2. Type your commands.
-3. To finish recording, press q (without any extra character).
-
-You can now execute the macro by typing the command "@{register}".
-
-Take a look at how to use these commands in practice.  You have a list of
-filenames that look like this:
-
-        stdio.h
-        fcntl.h
-        unistd.h
-        stdlib.h
-
-And what you want is the following:
-
-        #include "stdio.h"
-        #include "fcntl.h"
-        #include "unistd.h"
-        #include "stdlib.h"
-
-You start by moving to the first character of the first line.  Next you
-execute the following commands:
-
-        qa                      Start recording a macro in register a.
-        ^                       Move to the beginning of the line.
-        i#include "<Esc>        Insert the string #include " at the beginning
-                                of the line.
-        $                       Move to the end of the line.
-        a"<Esc>                 Append the character double quotation mark (")
-                                to the end of the line.
-        j                       Go to the next line.
-        q                       Stop recording the macro.
-
-Now that you have done the work once, you can repeat the change by typing the
-command "@a" three times.
-   The "@a" command can be preceded by a count, which will cause the macro to
-be executed that number of times.  In this case you would type: >
-
-        3@a
-        -->
+<p><b>q + (key to assign macro to)</b> - start macro recording</p><br />
+<p><b>q</b> - stop macro recording</p><br />
+<p><b>(number)@(assigned macro key)</b> - will perform the macro assigned to (assigned macro key), (number) times </p><br />
+<p><b>.</b> - not related to macros. will repeat the last performed action.</p><br />
 <h4>Vim abbreviations</h4><br /><br />
-<!--
-FIXING TYPING MISTAKES
-
-It's very common to make the same typing mistake every time.  For example,
-typing "teh" instead of "the".  You can fix this with an abbreviation: >
-
-        :abbreviate teh the
-
-You can add a whole list of these.  Add one each time you discover a common
-mistake.
-
-
-LISTING ABBREVIATIONS
-
-The ":abbreviate" command lists the abbreviations:
-
-        :abbreviate
-        i  #e             ****************************************/
-        i  #b            /****************************************
-        i  JB            Jack Benny
-        i  ad            advertisement
-        !  teh           the
-
-The "i" in the first column indicates Insert mode.  These abbreviations are
-only active in Insert mode.  Other possible characters are:
-
-        c       Command-line mode                       :cabbrev
-        !       both Insert and Command-line mode       :abbreviate
-
-Since abbreviations are not often useful in Command-line mode, you will mostly
-use the ":iabbrev" command.  That avoids, for example, that "ad" gets expanded
-when typing a command like: >
-
-        :edit ad
-
-
-DELETING ABBREVIATIONS
-
-To get rid of an abbreviation, use the ":unabbreviate" command.  Suppose you
-have the following abbreviation: >
-
-        :abbreviate @f fresh
-
-You can remove it with this command: >
-
-:unabbreviate @f-->
+<p>It's very common to make the same typing mistake every time.  For example,
+typing "teh" instead of "the".  You can fix this with an abbreviation: <br />
+<br/>        :abbreviate teh the<br/><br/>You can add a whole list of these.  Add one each time you discover a common<br/>mistake.<br/><br/><br/>LISTING ABBREVIATIONS<br/><br/>The ":abbreviate" command lists the abbreviations:<br/><br/>        :abbreviate<br/>        i  #e             ****************************************/<br/>        i  #b            /****************************************<br/>        i  JB            Jack Benny<br/>        i  ad            advertisement<br/>        !  teh           the<br/><br/>The "i" in the first column indicates Insert mode.  These abbreviations are<br/>only active in Insert mode.  Other possible characters are:<br/><br/>        c       Command-line mode                       :cabbrev<br/>        !       both Insert and Command-line mode       :abbreviate<br/><br/>Since abbreviations are not often useful in Command-line mode, you will mostly<br/>use the ":iabbrev" command.  That avoids, for example, that "ad" gets expanded<br/>when typing a command like: ><br/><br/>        :edit ad<br/><br/><br/>DELETING ABBREVIATIONS<br/><br/>To get rid of an abbreviation, use the ":unabbreviate" command.  Suppose you<br/>have the following abbreviation: ><br/><br/>        :abbreviate @f fresh<br/><br/>You can remove it with this command: ><br/><br/>:unabbreviate @f
+</p>
 <h4>Set paste to paste mode, set modifiable, the w!! shortcut</h4><br /><br />
+<p>to make pasting to the screen possible from a windowed browser, use :set paste</p>
+<p>sometimes a bin will request a lock on a file. to save :set modifiable</p>
+<p>w!! - w !sudo tee % </p>
 <h4>Vim plugins</h4><br /><br />
-<h4>Pathogen</h4><br /><br />
-<h4>Command-T</h4><br /><br />
-<h4>DrawIt</h4><br /><br />
-<h4>PyFlakes</h4><br /><br />
-<h4>SparkUp</h4><br /><br />
-<h4></h4><br /><br />
+<a href="https://github.com/tpope/vim-pathogen">Pathogen</a>
+<a href="https://github.com/wincent/Command-T">Command T</a>
+<a href="https://github.com/vim-scripts/DrawIt">DrawIt</a>
+<a href="https://github.com/kevinw/pyflakes">PyFlakes</a>
+<a href="https://github.com/tristen/vim-sparkup">SparkUp</a>
+<h4>Further Reading</h4><br /><br />
+<p>http://stackoverflow.com/questions/164847/what-is-in-your-vimrc</p>
+<p>http://stackoverflow.com/questions/74625/what-is-the-best-way-to-force-yourself-to-master-vi?lq=1</p>
 <br />
 <br />
-
-<!--
-
-  Material to cover:
-
-  Vim book
-
-  macros
-
-  http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
-
-  http://stackoverflow.com/questions/74625/what-is-the-best-way-to-force-yourself-to-master-vi?lq=1
-
-  VimGolf
-
-  :g/^/m0
-
--->

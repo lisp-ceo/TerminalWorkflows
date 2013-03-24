@@ -1,3 +1,182 @@
 ---
-layout: not_ready 
+layout: lesson
+title: "Lesson Three: Git - The light-weight, distributed revesion control system"
+date: "3/26/2013"
+subtitle: "The power of Git in managing the development of the Linux Kernel is fabled in the open source community. With the coming of new freemium hosting services like GitHub, more projects are moving to Git.<br /> "
 ---
+
+<center><img src="/TerminalWorkflows/img/mostinterestingterminal.jpg" height="300px" /></center><br /><br />
+<h4>Introduction</h4><br /><br />
+<p>Git is a fast, scalable, distributed revision control system with a rich command set that provides both high-level operations and full access to internals. It is technology that is immediately able to integrate into your development process with bindings available for migrating existing repositories.<br/><br/>
+It should not just be seen as a tool for managing programmers and managing code source. `man git` describes itself as "git - the stupid content tracker". I've built CMS for journalists and managed digital rights activism. It's a tool for managing changes in <b>any text</b>. Children's school reports, gas prices, anything.
+<br/><br/>
+As a technology, it is split into the plumbing and porcelain commands. The core git is often called "plumbing", with the prettier user interfaces on top of it called "porcelain". You may not want to use the plumbing directly very often, but it can be good to know what the plumbing does for when the porcelain isn't flushing. To put a bit of history behind the intuition, the porcelain commands were originally shell scripts.</p>
+  <p>This tutorial is split into 3 sections:</p>
+  <ul class="bulleted">
+      <li>
+        <b>User Guide</b> - Runs through the commands you'll use on a monthly basis when working with Git. Won't go into depth on their options, I'll politely point you to the man entries. But at the end you'll be able to boot up your own repo, manage it and share it with others.
+      </li>
+      <li>
+        <b>The Porcelain</b> - I'll run through some workflows with the porcelain commands.
+      </li>
+      <li>
+        <b>The Plumbing</b> - I'll run through some workflows with the plumbing commands which you'll largely use when something goes wrong.
+      </li>
+      <li>
+        <b>Workflows</b> - I'll go through some use patterns and ways to inorporate a git-based workflow with your life.</li>
+  </ul>
+
+<br /><br />
+<h1>User Guide</h4><br /><br />
+<h4>Installation instructions</h4><br /><br />
+<p>Debian/Ubuntu: <b>sudo apt-get install git</b><br />Fedora/RHEL: <b>su -c "yum install git-core"</b></p><br />
+<h4>Where To Go to Get More help</h4><br />
+<ul class="bulleted">
+    <li>
+      <b>man</b> - e.g. man git-init. git has excellent man coverage on its commands
+    </li>
+    <li>
+      <b>man gittutorial</b> - runs through how to import a new project into git, make changes to it, and share changes with other developers.
+    </li>
+    <li>
+      <b><a href="http://www.git-scm.com">git-scm</a></b> - a 'prettier' presentation of command-specific help
+    </li>
+    <li>
+    <b><a href="">Learn Git</a></b> - bite-sized pointers on how to learn git 'one commit at a time'.
+    </li>
+  </ul>
+<h4>Creating a repository</h4><br /><br />
+  <ol>
+    <li>
+      <b>mkdir -p ~/Code/myFirstGitRepo && cd ~/Code/myFirstGitRepo</b> - 
+    </li>
+    <li>
+      <b>git init .</b> - Initialize a git repo in the current directory. Git repos are stored
+    </li>
+    <li>
+    <b>echo "This is my repo." > README.md</b> - Initialize a git repo in the current directory. Git repos are stored
+    </li>
+  </ol>
+<h1>The Porcelain</h4><br /><br />
+<h1>The Plumbing</h4><br /><br />
+<h1>Workflows</h4><br /><br />
+<h4>Bash aliases</h4><br /><br />
+  <p>
+    Git comes with few shortcuts for commands you use all the time. You can run your hands ragged unless you alias your favorites. Here's a suggested entry in your bash_rc / bash_profile / zshrc dotfile.
+  </p>
+  <hr />
+  <p>
+ #### Git<br />
+<br />
+ alias gco="git commit -am"<br />
+ alias gch="git checkout"<br />
+ alias gba="git branch -a"<br />
+ alias gb="git branch"<br />
+ alias gs="git status"<br />
+  </p>
+  <hr />
+  <p>
+    <b>gco "Commit message"</b> - faster commits<br />
+    <b>gs -s</b> - faster status checks<br />
+  </p>
+
+<h4>Master is always production-ready</h4><br /><br />
+  <p>
+  As you've seen, branching is a very light-weight operation in Git. A branch is essentially just a pointer to a blob. This fact should be exploited to use multiple branches to track repositories at various stages of development. The 'Agile' best practise is to generally use the following branches:
+  </p>
+  <ul class="bulleted">
+      <li>
+        <b>master</b> - production-ready branch of a project. Passes all tests. Has vetted content. Contains no unfinished work. Can be deployed immediately without any questions should servers fail. Only the dev branch is merged to master. Each dev merge is tagged.
+      </li>
+      <li>
+        <b>dev</b> - main remote branch containing work that is in progress.Does not need to pass the production test suite or have completed content but it does need to pass a suite of tests to ensure that all commiters can boot it and work on their various sections. Is frequently committed to (3+ commits per commiter per day).
+      </li>
+      <li>
+      <b>other</b> - whilst most applications will just need the previous 2 branches, there are certain workflows that call on additional branches on the remote node. It should also be noted that you want to keep remote branches to a minimum to avoid confusion about what exactly is being worked on.
+        <ul class="bulleted">
+          <li>
+            <b>gh-pages</b> - github will host a docs/landing page for your repo if you use the branch gh-pages. This site is entirely hosted as a gh-paes branch. 
+          </li>
+          <li>
+            <b>legacy</b> - contains previous material to reference. This should be moved to its own repository or mothballed.
+          </li>
+          <li>
+            <b>issueBranches</b> - some people will need to work separately of others and make breaking changes to the repository in order to achieve a desired goal. Whils they should really be adding eachother as remotes and pulling and pushing over ssh - they frequently use temporary remote branches.
+        </ul>
+      </li>
+  </ul>
+<h4>Versioned releases using submodules <b>OR</b> branches</h4><br /><br />
+<p>I had an argument with a colleague about how to structure a repository for a project that requires multiple versions to be maintained indefinitely. So I've conceded that each of these workflows is acceptable. That said, I think the submodule approach is cleaner.</p>
+        <ul class="bulleted">
+          <li>
+          <b>The Submodule approach</b> - The top-level repository contains sub-folders that are each git repositories holding the versioned code. E.g</p>
+          <ul>
+            <li>
+            MyRepo<br />
+            <ul>
+              <li>
+                Version 1
+              </li>
+              <li>
+                Version 2
+              </li>
+              <li>
+                Version 3
+              </li>
+              <li>
+                Version 4
+              </li>
+              <br />
+            </ul>
+            </li>
+          </ul>
+          <p> Whenever a new version is released, clone it do a new submodule of the top level repository 'MyRepo'. Whenever a commit is made to one Version that needs to be applied to others, you can apply the commit to each of the subdirectories.<br /><br />
+          TODO: Syntax for patch application to repos with common history.
+          </p>
+          </li>
+          <li>
+            <p><b>The branch approach</b> - The repository has a different branch for each stable commit. E.g</p>
+          <ul>
+            <li>
+            MyRepo<br />
+            <ul>
+              <li>
+               src 
+              </li>
+            </ul>
+            </li>
+          </ul>
+          <p>Whenever a new version is released, create a new branch. Whenever a commit is made to one Version that needs to be applied to others, you apply the commit to each of the branches.</p>
+         </li>
+        </ul>
+
+<h4>SQL-like views using branches</h4><br /><br />
+<p>Branches can have contents that are entirely different from one another. As such, you can have one 'code' branch and other branches for displaying documentation and landing information. This approach is used by github in generating gh-pages. I use it as a tidy way of tying documentation to a repository.<br /><br />
+Provided that your 'view' branches all generate their presentation from a directory that is shared with the master code release, you can pull changes from the code releases to update your view branches.</p>
+<h4>The authortative bare repository</h4><br /><br />
+  <p>
+    Whilst git is designed to be a 'distributed' versioning system, it can be used as an authority by using bare repositories. In this anti-pattern, bare repositories are not directly editable and merely store the '.git' folder tracking changes to blobs, trees, commits and tags. Under this model, all developers can treat this as they would an SVN or similar repository. May be a good move if you've got committers who are stuck in their old ways.
+  </p>
+<h4>The Code stick</h4><br /><br />
+  <p>
+    I work a lot. I work at many different locations on many different machines, operating systems and architectures. I work at shared computers, machines with untrusted or non-existant internet connections and machines that will be used once and then never again. I don't want to have to spend the time setting up environments or waiting for SSH sessions to recover. <br /><br />
+    
+    I carry around my dotfiles, package lists and repositories on a usb. Mount the drive and work from there. As git is distributed all my changes come wherever I go and are synced to others whenever I chose to.
+  </p>
+<h4>GitHub's pull requests</h4><br /><br />
+  <p>
+  The process of developing the Linux Kernel can be characterized as an olgarchic meritocracy. Starting with Linus, who dictates all release revisions, there is a tree of maintainers extending out below him of developers with specific domain knowledge about their practises. There is a filesystem team, a networking team, a thread management team. Below these teams there are developers who implement updates to the kernel. The whole system is held together by the trust model and the idea of all patches accumulating upwards as they are tested and approved by people of increasing domain knowledge.<br /><br />
+Whilst git does not support this pattern by default (as kernel developers generally email their changes to eachother), services like GitHub have an integrated 'pull request' pattern built into their workflow where maintainers are submitted commits which they can choose to apply, reject with commentary for improvement or bin.</p>
+
+Ideas on stuff to do:
+
+- Boot up a repo
+- Set up a gitignore file
+- Add a remote
+- Pull changes from the remote
+- Push changes to the remote
+- Show branching
+- Design patterns:
+  * tags
+  * getting reports --bisect
+  * merging repositories

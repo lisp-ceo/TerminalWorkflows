@@ -1,3 +1,42 @@
 ---
-layout: not_ready 
+layout: lesson
+title: "Lesson Four: Bash Scripting."
+date: "4/9/2013"
+subtitle: "The final workshop will cover the basics and use cases for bash scripting as an alternative to more complicated languages and toolsets. <br /> "
 ---
+
+<h4>Introduction</h4><br /><br />
+<center><img src="/TerminalWorkflows/img/dying_bash.jpg" height="300px" /></center><br />
+<p>I hear a lot that shell scripting is a dying art. Whilst it may be possible to do anything in shell in another language, it is hard to find a tool that will let you develop filesystem operations as quickly as a simple bash script. In Python, to view the contents of the home directory its an operation that requires specific calls on the os module and you'll need to hand-format the output after iterating the output. In bash, its 2 lines.</p><br />
+<hr/>
+<p>
+#!/bin/bash<br />
+# list.sh<br />
+echo `ls`<br />
+</p>
+<hr/>
+<p>
+#!/env python<br />
+# list.py<br />
+import os<br />
+def list_dirs():<br />
+  path = "/home/jrm"<br />
+  dirList = os.listdir(path)<br />
+  for fname in dirList:<br />
+    print fname<br />
+<br />
+if __name__ == "__main__":<br />
+  list_dirs()<br />
+</p>
+<hr/>
+<br />
+<p>I wish to make clear that I'm not saying that bash is the highlander of programming languages, it has specific use cases that cannot be easily replicated.</p>
+
+<h4>Points to cover</h4><br /><br />
+<ul class="bulleted">
+  <li>hashbang</li>
+  <li>syntax</li>
+  <li>automation</li>
+  <li>combining multiple utilities and scripts</li>
+  <li>example use cases</li>
+</ul>

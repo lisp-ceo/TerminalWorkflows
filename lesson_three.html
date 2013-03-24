@@ -132,7 +132,440 @@ As a technology, it is split into the plumbing and porcelain commands. The core 
     </li>
   </ol>
 <h1>The Porcelain</h4><br /><br />
+  <b>
+       git-add(1)<br />
+           Add file contents to the index.<br />
+<br />
+       git-am(1)<br />
+           Apply a series of patches from a mailbox.<br />
+<br />
+       git-archive(1)<br />
+           Create an archive of files from a named tree.<br />
+<br />
+       git-bisect(1)<br />
+           Find by binary search the change that introduced a bug.<br />
+<br />
+       git-branch(1)<br />
+           List, create, or delete branches.<br />
+<br />
+       git-bundle(1)<br />
+           Move objects and refs by archive.<br />
+<br />
+       git-checkout(1)<br />
+           Checkout a branch or paths to the working tree.<br />
+<br />
+       git-cherry-pick(1)<br />
+           Apply the changes introduced by some existing commits.<br />
+<br />
+       git-citool(1)<br />
+           Graphical alternative to git-commit.<br />
+<br />
+       git-clean(1)<br />
+           Remove untracked files from the working tree.<br />
+<br />
+       git-clone(1)<br />
+           Clone a repository into a new directory.<br />
+<br />
+       git-commit(1)<br />
+           Record changes to the repository.<br />
+<br />
+       git-describe(1)<br />
+           Show the most recent tag that is reachable from a commit.<br />
+<br />
+       git-diff(1)<br />
+           Show changes between commits, commit and working tree, etc.<br />
+<br />
+       git-fetch(1)<br />
+           Download objects and refs from another repository.<br />
+<br />
+       git-format-patch(1)<br />
+           Prepare patches for e-mail submission.<br />
+<br />
+       git-gc(1)<br />
+           Cleanup unnecessary files and optimize the local repository.<br />
+<br />
+       git-grep(1)<br />
+           Print lines matching a pattern.<br />
+<br />
+       git-gui(1)<br />
+           A portable graphical interface to Git.<br />
+<br />
+       git-init(1)<br />
+           Create an empty git repository or reinitialize an existing one.<br />
+<br />
+       git-log(1)<br />
+           Show commit logs.<br />
+<br />
+       git-merge(1)<br />
+           Join two or more development histories together.<br />
+<br />
+       git-mv(1)<br />
+           Move or rename a file, a directory, or a symlink.<br />
+<br />
+       git-notes(1)<br />
+           Add or inspect object notes.<br />
+<br />
+       git-pull(1)<br />
+           Fetch from and merge with another repository or a local branch.<br />
+<br />
+       git-push(1)<br />
+           Update remote refs along with associated objects.<br />
+<br />
+       git-rebase(1)<br />
+           Forward-port local commits to the updated upstream head.<br />
+<br />
+       git-reset(1)<br />
+           Reset current HEAD to the specified state.<br />
+<br />
+       git-revert(1)<br />
+           Revert some existing commits.<br />
+<br />
+       git-rm(1)<br />
+           Remove files from the working tree and from the index.<br />
+<br />
+       git-shortlog(1)<br />
+           Summarize git log output.<br />
+<br />
+       git-show(1)<br />
+           Show various types of objects.<br />
+<br />
+       git-stash(1)<br />
+           Stash the changes in a dirty working directory away.<br />
+<br />
+       git-status(1)<br />
+           Show the working tree status.<br />
+<br />
+       git-submodule(1)<br />
+           Initialize, update or inspect submodules.<br />
+<br />
+       git-tag(1)<br />
+           Create, list, delete or verify a tag object signed with GPG.<br />
+<br />
+       gitk(1)<br />
+           The git repository browser.<br />
+<br />
+   Ancillary Commands<br />
+       Manipulators:<br />
+<br />
+       git-config(1)<br />
+           Get and set repository or global options.<br />
+<br />
+       git-fast-export(1)<br />
+           Git data exporter.<br />
+<br />
+       git-fast-import(1)<br />
+           Backend for fast Git data importers.<br />
+<br />
+       git-filter-branch(1)<br />
+           Rewrite branches.<br />
+<br />
+       git-lost-found(1)<br />
+           (deprecated) Recover lost refs that luckily have not yet been pruned.<br />
+<br />
+       git-mergetool(1)<br />
+           Run merge conflict resolution tools to resolve merge conflicts.<br />
+<br />
+       git-pack-refs(1)<br />
+           Pack heads and tags for efficient repository access.<br />
+<br />
+       git-prune(1)<br />
+           Prune all unreachable objects from the object database.<br />
+<br />
+       git-reflog(1)<br />
+           Manage reflog information.<br />
+<br />
+       git-relink(1)<br />
+           Hardlink common objects in local repositories.<br />
+<br />
+       git-remote(1)<br />
+           manage set of tracked repositories.<br />
+<br />
+       git-repack(1)<br />
+           Pack unpacked objects in a repository.<br />
+<br />
+       git-replace(1)<br />
+           Create, list, delete refs to replace objects.<br />
+<br />
+       git-repo-config(1)<br />
+           (deprecated) Get and set repository or global options.<br />
+<br />
+       Interrogators:<br />
+<br />
+       git-annotate(1)<br />
+           Annotate file lines with commit information.<br />
+<br />
+       git-blame(1)<br />
+           Show what revision and author last modified each line of a file.<br />
+<br />
+       git-cherry(1)<br />
+           Find commits not merged upstream.<br />
+<br />
+       git-count-objects(1)<br />
+           Count unpacked number of objects and their disk consumption.<br />
+<br />
+       git-difftool(1)<br />
+           Show changes using common diff tools.<br />
+<br />
+       git-fsck(1)<br />
+           Verifies the connectivity and validity of the objects in the database.<br />
+<br />
+       git-get-tar-commit-id(1)<br />
+           Extract commit ID from an archive created using git-archive.<br />
+<br />
+       git-help(1)<br />
+           display help information about git.<br />
+<br />
+       git-instaweb(1)<br />
+           Instantly browse your working repository in gitweb.<br />
+<br />
+       git-merge-tree(1)<br />
+           Show three-way merge without touching index.<br />
+<br />
+       git-rerere(1)<br />
+           Reuse recorded resolution of conflicted merges.<br />
+<br />
+       git-rev-parse(1)<br />
+           Pick out and massage parameters.<br />
+<br />
+       git-show-branch(1)<br />
+           Show branches and their commits.<br />
+<br />
+       git-verify-tag(1)<br />
+           Check the GPG signature of tags.<br />
+<br />
+       git-whatchanged(1)<br />
+           Show logs with difference each commit introduces.<br />
+<br />
+       gitweb(1)<br />
+           Git web interface (web frontend to Git repositories).<br />
+<br />
+   Interacting with Others<br />
+       These commands are to interact with foreign SCM and with other people via patch over e-mail.<br />
+<br />
+       git-archimport(1)<br />
+           Import an Arch repository into git.<br />
+<br />
+       git-cvsexportcommit(1)<br />
+           Export a single commit to a CVS checkout.<br />
+<br />
+       git-cvsimport(1)<br />
+           Salvage your data out of another SCM people love to hate.<br />
+<br />
+       git-cvsserver(1)<br />
+           A CVS server emulator for git.<br />
+<br />
+       git-imap-send(1)<br />
+           Send a collection of patches from stdin to an IMAP folder.<br />
+<br />
+       git-quiltimport(1)<br />
+           Applies a quilt patchset onto the current branch.<br />
+<br />
+       git-request-pull(1)<br />
+           Generates a summary of pending changes.<br />
+<br />
+       git-send-email(1)<br />
+           Send a collection of patches as emails.<br />
+<br />
+       git-svn(1)<br />
+           Bidirectional operation between a Subversion repository and git.<br />
+  </b>
+  <br />
+  <br />
 <h1>The Plumbing</h4><br /><br />
+       Although git includes its own porcelain layer, its low-level commands are sufficient to support development of<br />
+       alternative porcelains. Developers of such porcelains might start by reading about git-update-index(1) and git-read-<br />
+       tree(1).<br />
+<br />
+       The interface (input, output, set of options and the semantics) to these low-level commands are meant to be a lot more<br />
+       stable than Porcelain level commands, because these commands are primarily for scripted use. The interface to Porcelain<br />
+       commands on the other hand are subject to change in order to improve the end user experience.<br />
+<br />
+       The following description divides the low-level commands into commands that manipulate objects (in the repository, index,<br />
+       and working tree), commands that interrogate and compare objects, and commands that move objects and references between<br />
+       repositories.<br />
+<br />
+<b>
+   Manipulation commands<br />
+       git-apply(1)<br />
+           Apply a patch to files and/or to the index.<br />
+<br />
+       git-checkout-index(1)<br />
+           Copy files from the index to the working tree.<br />
+<br />
+       git-commit-tree(1)<br />
+           Create a new commit object.<br />
+<br />
+       git-hash-object(1)<br />
+           Compute object ID and optionally creates a blob from a file.<br />
+<br />
+       git-index-pack(1)<br />
+           Build pack index file for an existing packed archive.<br />
+<br />
+       git-merge-file(1)<br />
+           Run a three-way file merge.<br />
+<br />
+       git-merge-index(1)<br />
+           Run a merge for files needing merging.<br />
+<br />
+       git-mktag(1)<br />
+           Creates a tag object.<br />
+<br />
+       git-mktree(1)<br />
+           Build a tree-object from ls-tree formatted text.<br />
+<br />
+       git-pack-objects(1)<br />
+           Create a packed archive of objects.<br />
+<br />
+       git-prune-packed(1)<br />
+           Remove extra objects that are already in pack files.<br />
+<br />
+       git-read-tree(1)<br />
+           Reads tree information into the index.<br />
+<br />
+       git-symbolic-ref(1)<br />
+           Read and modify symbolic refs.<br />
+<br />
+       git-unpack-objects(1)<br />
+           Unpack objects from a packed archive.<br />
+<br />
+       git-update-index(1)<br />
+           Register file contents in the working tree to the index.<br />
+<br />
+       git-update-ref(1)<br />
+           Update the object name stored in a ref safely.<br />
+<br />
+       git-write-tree(1)<br />
+           Create a tree object from the current index.<br />
+<br />
+   Interrogation commands<br />
+       git-cat-file(1)<br />
+           Provide content or type and size information for repository objects.<br />
+<br />
+       git-diff-files(1)<br />
+           Compares files in the working tree and the index.<br />
+<br />
+       git-diff-index(1)<br />
+           Compares content and mode of blobs between the index and repository.<br />
+<br />
+       git-diff-tree(1)<br />
+           Compares the content and mode of blobs found via two tree objects.<br />
+<br />
+       git-for-each-ref(1)<br />
+           Output information on each ref.<br />
+<br />
+       git-ls-files(1)<br />
+           Show information about files in the index and the working tree.<br />
+<br />
+       git-ls-remote(1)<br />
+           List references in a remote repository.<br />
+<br />
+       git-ls-tree(1)<br />
+           List the contents of a tree object.<br />
+<br />
+       git-merge-base(1)<br />
+           Find as good common ancestors as possible for a merge.<br />
+<br />
+       git-name-rev(1)<br />
+           Find symbolic names for given revs.<br />
+<br />
+       git-pack-redundant(1)<br />
+           Find redundant pack files.<br />
+<br />
+       git-rev-list(1)<br />
+           Lists commit objects in reverse chronological order.<br />
+<br />
+       git-show-index(1)<br />
+           Show packed archive index.<br />
+<br />
+       git-show-ref(1)<br />
+           List references in a local repository.<br />
+<br />
+       git-tar-tree(1)<br />
+           (deprecated) Create a tar archive of the files in the named tree object.<br />
+<br />
+       git-unpack-file(1)<br />
+           Creates a temporary file with a blob’s contents.<br />
+       git-var(1)<br />
+           Show a git logical variable.<br />
+<br />
+       git-verify-pack(1)<br />
+           Validate packed git archive files.<br />
+<br />
+       In general, the interrogate commands do not touch the files in the working tree.<br />
+<br />
+   Synching repositories<br />
+       git-daemon(1)<br />
+           A really simple server for git repositories.<br />
+<br />
+       git-fetch-pack(1)<br />
+           Receive missing objects from another repository.<br />
+<br />
+       git-http-backend(1)<br />
+           Server side implementation of Git over HTTP.<br />
+<br />
+       git-send-pack(1)<br />
+           Push objects over git protocol to another repository.<br />
+<br />
+       git-update-server-info(1)<br />
+           Update auxiliary info file to help dumb servers.<br />
+<br />
+       The following are helper commands used by the above; end users typically do not use them directly.<br />
+<br />
+       git-http-fetch(1)<br />
+           Download from a remote git repository via HTTP.<br />
+<br />
+       git-http-push(1)<br />
+           Push objects over HTTP/DAV to another repository.<br />
+<br />
+       git-parse-remote(1)<br />
+           Routines to help parsing remote repository access parameters.<br />
+<br />
+       git-receive-pack(1)<br />
+           Receive what is pushed into the repository.<br />
+<br />
+       git-shell(1)<br />
+           Restricted login shell for Git-only SSH access.<br />
+<br />
+       git-upload-archive(1)<br />
+           Send archive back to git-archive.<br />
+<br />
+       git-upload-pack(1)<br />
+           Send objects packed back to git-fetch-pack.<br />
+<br />
+   Internal helper commands<br />
+       These are internal helper commands used by other commands; end users typically do not use them directly.<br />
+<br />
+       git-check-attr(1)<br />
+           Display gitattributes information.<br />
+<br />
+       git-check-ref-format(1)<br />
+           Ensures that a reference name is well formed.<br />
+<br />
+       git-fmt-merge-msg(1)<br />
+           Produce a merge commit message.<br />
+<br />
+       git-mailinfo(1)<br />
+           Extracts patch and authorship from a single e-mail message.<br />
+<br />
+       git-mailsplit(1)<br />
+           Simple UNIX mbox splitter program.<br />
+<br />
+       git-merge-one-file(1)<br />
+           The standard helper program to use with git-merge-index.<br />
+<br />
+       git-patch-id(1)<br />
+           Compute unique ID for a patch.<br />
+<br />
+       git-peek-remote(1)<br />
+           (deprecated) List the references in a remote repository.<br />
+<br />
+       git-sh-setup(1)<br />
+           Common git shell script setup code.<br />
+<br />
+       git-stripspace(1)<br />
+           Remove unnecessary whitespace.<br />
+<br />
+</b>
 <h1>Workflows</h4><br /><br />
 <h4>Bash aliases</h4><br /><br />
   <p>

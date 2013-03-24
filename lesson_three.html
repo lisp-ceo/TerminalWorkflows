@@ -45,7 +45,7 @@ As a technology, it is split into the plumbing and porcelain commands. The core 
     <b><a href="">Learn Git</a></b> - bite-sized pointers on how to learn git 'one commit at a time'.
     </li>
   </ul>
-<h4>Creating a repository</h4><br /><br />
+<h4>Working with a repository</h4><br />
   <ol>
     <li>
       <b>mkdir -p ~/Code/myFirstGitRepo && cd ~/Code/myFirstGitRepo</b> - 
@@ -54,7 +54,81 @@ As a technology, it is split into the plumbing and porcelain commands. The core 
       <b>git init .</b> - Initialize a git repo in the current directory. Git repos are stored
     </li>
     <li>
-    <b>echo "This is my repo." > README.md</b> - Initialize a git repo in the current directory. Git repos are stored
+      <b>echo "This is my repo." > README.md</b> - Initialize a git repo in the current directory. All information required for git to track the history of a file across your network of contributors is stored within the .git directory.
+    </li>
+    <li>
+      <b>git status</b> - Shows all files 'staged' and not 'staged' for commit. To add a file to the staging area, use 'git add'.
+    </li>
+    <li>
+      <b>git add README.md</b>
+    </li>
+    <li>
+      <b>git status</b> - Has been updated with our staged changes.
+    </li>
+    <li>
+    <b>git rm --cached README.md</b> - File has been unstaged <b>OR</b> <b>git rm -f README.md</b> - File has been deleted<br />
+    </li>
+    <li>
+    <b>git add README.md && git commit</b> - Git demands you comment your commits be commented. A shortcut for skipping this step is git <b>commit -m "comment_string"</b><br />
+    </li>
+    <li>
+      <b>git remote add origin git@github.com:YourGitHubUserNam</b> - Git demands you comment your commits be commented. A shortcut for skipping this step is git <b>commit -m "comment_string"</b><br />
+    </li>
+    <li>
+      <b>git log</b> - see your commit<br />
+      <b>git log -p</b> - see your commit with additional information
+    </li>
+    <li>
+      <b>cd .. && git clone file://myFirstGitRepo myFirstGitClone && cd myFirstGitClone</b> - clone the repository to a new directory. This is analogous to cloning the repository to a new node on your network or pushing it up to a NAS (GitHub).
+    </li>
+    <li>
+      <b>cd ../myFirstGitRepo</b><br />
+      <b>git branch updates_for_james_from_amanda master</b> - create a new branch based of our local master branch<br/>
+      </li>
+      <li>
+        <b>echo "\nHere's my proposed changes for James, from Amanda."</b>
+      </li>
+      <li>
+        <b>git diff -p</b> - review unstaged, uncommited changes
+      </li>
+      <li>
+        <b>git add README.md</b><br />
+      </li>
+      <li>
+        <b>git status -v</b> - review staged, uncommited changes<br />
+      </li>
+      <li>
+        <b>git commit -am "Here are the changes for James from Amanda"</b> - committing the changes produces a new commit hash.
+      </li>
+      <li>
+        <b>git log -p</b> - review commited changes and commit hash
+      </li>
+      <li>
+        <b>git branch</b> - view all our local branches<br />
+        <b>git branch -a</b> - view all known branches
+      </li>
+      <li>
+        <b>git checkout master</b> - switching branches. Git will complain if you try to change branches with uncomitted or unstashed changes.
+      </li>
+      <li>
+        <b>git merge updates_for_james_from_amanda</b> - merge together changes from the new branch with our 'master' branch'
+      </li>
+      <li>
+        <b>git log --oneline --graph</b> - view changes made so far
+      </li>
+      <li>
+        <b>cd ../myFirstGitClone</b><br />
+        <b>git branch -a</b> - when you clone an existing repo, git will add it automatically as a remote called 'origin'. You can change this to whatever you want but in the early days you'll want to keep this nomenclature.
+      </li>
+      <li>
+        Compare the following branches to get a firmer grasp:<br />
+        <b>git checkout -b local_master master</b><br />
+        <b>git checkout -b remote_master origin/master</b><br />
+        Pay close attention to the output when these branches are created<br />
+      </li>
+      <li>
+        <b>git checkout master</b>
+      </li>
     </li>
   </ol>
 <h1>The Porcelain</h4><br /><br />

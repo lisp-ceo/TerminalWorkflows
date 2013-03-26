@@ -1,4 +1,4 @@
 auto: true
 server: true
-server_port: 80
+server_port: 8080
 url: www.terminalworkflows.com
